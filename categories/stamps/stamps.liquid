@@ -1,0 +1,26 @@
+---
+tags: category
+title: Stamps
+order: 50
+bgtype: orange
+footer: I have come to
+---
+<div class="stamp-grid">
+	{% for stamp in collections.stamps %}
+		<div class="stamp-card">
+			<div class="content">
+				<img src="/{{ stamp }}"/>
+			</div>
+		</div>
+	{% endfor %}
+
+	{% for stamp in collections.bigstamps %}
+		<div class="stamp-card">
+			<div class="content">
+				<img src="/{{ stamp }}"/>
+			</div>
+		</div>
+	{% endfor %}
+</div>
+<br/>
+<br/>

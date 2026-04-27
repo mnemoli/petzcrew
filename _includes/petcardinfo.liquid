@@ -1,0 +1,29 @@
+{%- assign favcolors = pet['Favorite Color'] | split: "; " -%}
+{%- assign  favflavors = pet['Favorite Flavor'] | split: "; " -%}
+{%- assign sigs = pet['Signature Moves'] | split: '; ' -%}
+<div class="favorites">
+	{%- for color in favcolors -%}
+		<div title="{{ color }}" class="fav-color {{color}}"></div>
+	{%- endfor -%}
+	{%- for flavor in favflavors -%}
+		<div title="{{ flavor }}" class="fav-flavor {{flavor}}"></div>
+	{%- endfor -%}
+	{%- if sigs[0] != '1' and sigs[0] != '01' -%}
+		<div title="Has signature move: {{ sigs[0] }}" class="signature-move"></div>
+	{%- endif  -%}
+</div>
+<div class="personalities">
+	{%- for pkey in personalityKeys -%}
+	{%- capture pkk  -%}
+	{{ pkey }} Center
+	{%- endcapture -%}
+	{%- assign pval = pet[pkk] -%}
+	{%- if pval > 80 -%}
+		<div title="High {{ pkey }}: {{ pval }}" class="personality {{ pkey }}-high"></div>
+	{%- endif  -%}
+	{%- if pval < 20 -%}
+		<div title="Low {{ pkey }}: {{ pval }}" class="personality {{ pkey }}-low"></div>
+	{%- endif  -%}
+	{%- endfor  -%}
+</div>
+{{pet['Owner Name']}}

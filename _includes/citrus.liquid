@@ -1,0 +1,39 @@
+---
+title: Bellona
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>orangerie - {{ title | downcase}}</title>
+    <link rel="stylesheet" href="/bundle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syncopate&family=Yanone+Kaffeesatz:wght@200..700&display=swap" rel="stylesheet">
+  <body>
+    <div class="header-wrapper">
+      <div class="title">
+        <a href="/index.html">orangerie</a>
+      </div>
+      <div class="nav">
+        {%- assign sortedmenu = collections.category | sort: "data.order" -%}
+          <ol>
+        {%- for category in sortedmenu -%}
+            <li>
+                <a href="{{category.url}}">{{category.data.title}}</a>
+            </li>
+        {%- endfor -%}
+          </ol>
+      </div>
+  </div>
+    <div class="wrapper">
+    {{ content }}
+  </div>
+  <hr>
+  <div class="footer">
+    <p>Graphics credits: <a href="https://www.vecteezy.com/members/tati-dsgn">Tatyana Pavliuk (Vecteezy)</a></p>
+    <p class="footer-addon">{{ footer }}</p>
+  </div>
+  </body>
+</html>

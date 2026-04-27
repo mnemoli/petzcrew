@@ -1,0 +1,40 @@
+{%- if usebiggergrid == true -%}
+<div class="hex-grid">
+{%- else  -%}
+<div class="grid">
+{% endif %}
+	{% for pet in petz %}
+		{%  if pet['BigPic'] == nil or pet['BigPic'] == ''  %}
+		<div class="card">
+			<div class="header">
+				<h2>{{ pet.Name }}</h2>
+			</div>
+			<div class="content">
+				<div class="img-wrapper">
+					<div class="circle-bg {{ bgtype }}"></div>
+					<img src="pix/{{pet.Name}}.png"/>
+				</div>
+			{% include 'petcardinfo.liquid' %}
+			</div>
+		</div>
+		{% endif %}
+	{% endfor %}
+</div>
+<div class="biggrid">
+{% for pet in petz %}
+	{%  if pet.BigPic == '1' %}
+	<div class="card">
+		<div class="header">
+			<h2>{{ pet.Name }}</h2>
+		</div>
+		<div class="content">
+			<div class="img-wrapper">
+				<div class="circle-bg circle-bg-big {{ bgtype }}"></div>
+				<img src="pix/{{pet.Name}}.png"/>
+			</div>
+			{% include 'petcardinfo.liquid' %}
+		</div>
+	</div>
+	{% endif %}
+{% endfor %}
+</div>

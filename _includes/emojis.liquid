@@ -1,0 +1,14 @@
+{% for emojiset in favEmojis %}
+.{{ emojiset[0] }}::after {
+	content: "{{emojiset[1]}}"
+}
+{% endfor %}
+
+{% for emojiset in personalityEmojis %}
+.{{ emojiset[0] }}-high::after {
+	content: "{{emojiset[1][0]}}"
+}
+.{{ emojiset[0] }}-low::after {
+	content: "{{emojiset[1][1]}}"
+}
+{% endfor %}
