@@ -30,12 +30,12 @@ export default function(eleventyConfig) {
 
   eleventyConfig.addGlobalData("personalityEmojis", {
     Liveliness: ["💃", " 🦥"],
-    Playfulness: ["🛝", "📖"],
+    Playfulness: ["🎲", "📖"],
     Independence: ["🧊", "🫂"],
     Confidence: ["😎", "🫣"],
     Naughtiness: ["😈", ""],
     Acrobaticness: ["🦘", "🤕"],
-    Patience: ["⌛", "😠"],
+    Patience: ["⌛", "⏱️"],
     Kindness: ["😊", "😡"],
     Nurturing: ["👶", "🙅"],
     Finickiness: ["🐩", ""],
@@ -43,7 +43,7 @@ export default function(eleventyConfig) {
     Messiness: ["🫟", ""],
     Quirkiness: ["❓", ""],
     Insanity: ["🤪", ""],
-    Constitution: ["💪", "🥛"]
+    Constitution: ["💪", "🥀"]
   });
   eleventyConfig.addGlobalData("favEmojis", {
     chicken: "🍗",
