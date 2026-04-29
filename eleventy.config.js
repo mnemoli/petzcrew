@@ -1,7 +1,10 @@
 import { parse } from 'csv-parse/sync'
 import globSync from "fast-glob";
+import { HtmlBasePlugin } from "@11ty/eleventy";
 
 export default function(eleventyConfig) {
+  eleventyConfig.addPlugin(HtmlBasePlugin);
+
   eleventyConfig.addPassthroughCopy("img")
   eleventyConfig.addPassthroughCopy("categories", {
     filter: ["{catz,dogz,hexes,crew}/pix/*.png"],
