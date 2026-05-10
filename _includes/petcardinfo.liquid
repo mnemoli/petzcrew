@@ -26,4 +26,8 @@
 	{%- endif  -%}
 	{%- endfor  -%}
 </div>
+{%- if pet['Owner Name'] == 'unknown' -%}
+Prism
+{%- else -%}
 {{pet['Owner Name']}}
+{%- endif -%}
